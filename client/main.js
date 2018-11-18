@@ -52,7 +52,7 @@ function displayPhotoDetails(photo) {
     const $div = document.createElement('.div');
     $area.appendChild($div);
 
-    $area.innerHTML += template;
+    $div.innerHTML += template;
 }
 
 window.addEventListener('DOMContentLoaded', setup);
