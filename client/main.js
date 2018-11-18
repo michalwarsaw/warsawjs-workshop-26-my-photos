@@ -3,8 +3,20 @@ function setup() {
         .then(photos => {
             render(photos);
             zoomPhoto(photos[0]);
+            handleSearchForm(photos);
         });
 
+}
+
+function handleSearchForm(photos) {
+    const $area = document.querySelector('.container');
+    const $input = document.createElement('input');
+    $area.appendChild($input);
+    $input.addEventListener('keypress', () => {
+        const value = $input.value.toLowerCase();
+        const filteredPhotos = photos.filter(photo => photo.title.toLowerCase().match(value));
+        render(filteredPhotos);
+    });
 }
 
 function removeFullPhoto() {
@@ -28,7 +40,7 @@ function zoomPhoto(photo) {
 
 function fetchPhotos() {
 
-    return fetch('/photos')
+    return fetch('http://localhost:3000/photos')
         .then(res => res.json());
 
 }
