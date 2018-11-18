@@ -49,7 +49,7 @@ function render(photos) {
 function displayPhotoDetails(photo) {
     const template = `<p>${photo.tags.join(', ')}</p> <p>${photo.title}</p>`;
     const $area = document.querySelector('.container');
-    const $div = document.createElement('.div');
+    const $div = document.createElement('div');
     $area.appendChild($div);
 
     $div.innerHTML += template;
