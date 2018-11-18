@@ -28,7 +28,7 @@ function zoomPhoto(photo) {
 
 function fetchPhotos() {
 
-    return fetch('http://localhost:3000/photos')
+    return fetch('/photos')
         .then(res => res.json());
 
 }
